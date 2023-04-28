@@ -7,6 +7,7 @@ class Knight
         [2,1],[2,-1],[-2,1],[-2,-1]].freeze
 
     @@final = []
+    @@history = []
 
     def initialize(move_start, move_end , gen = 0, children = [])
         @move_start = move_start
@@ -29,7 +30,7 @@ class Knight
             end
         end
         node.children.each do |child|
-            it_moves(child, move_end, gen + 1) unless child.nil?
+            it_moves(child, move_end, gen + 1) unless child.nil? 
         end
     end
 end
