@@ -1,8 +1,8 @@
-require_relative "lib/board.rb"
 require_relative "lib/knight.rb"
 
 puts "This works"
-
-game = Knight.new([2,2],[4,5])
+from = [1,1]
+to = [8,8]
+game = Knight.new(from,to)
 game.it_moves
-puts "The knight gets there in #{Knight.class_variable_get(:@@final).first} moves"
+puts "The knight gets from #{from} to #{to} in #{Knight.class_variable_get(:@@final).min} moves"

@@ -16,18 +16,20 @@ class Knight
     end
 
     def it_moves(location = @move_start, move_end = @move_end, gen = @gen)
-        
         return  @@final.push(gen.to_s) if location == @move_end
         return if gen > 5
 
         node = Knight.new(location, move_end, gen)
 
         MOVES.each do |move|
-            node.children <<  ([(move[0]+location[0]), (move[1] + location[1])])
+            if  move[0]+location[0] < 9 && move[0]+location[0] > 0 && move[1]+location[1] < 9 && move[1]+location[1] > 0
+            node.children <<  ([(move[0]+location[0]), (move[1] + location[1])]) 
+            else 
+                node.children << nil
+            end
         end
         node.children.each do |child|
-            it_moves(child, move_end, gen + 1)
+            it_moves(child, move_end, gen + 1) unless child.nil?
         end
     end
-        
 end
