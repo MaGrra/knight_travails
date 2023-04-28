@@ -3,3 +3,6 @@ require_relative "lib/knight.rb"
 
 
 puts "Welcome to a hopefully better attemt of this"
+
+test = Board.new
+puts test.new_board
