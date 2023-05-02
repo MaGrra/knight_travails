@@ -1,8 +1,11 @@
-class Node
-    attr_accessor :value, :parent
+# frozen_string_literal: true
 
-    def initialize(value, parent: nil)
-        @value = value
-        @parent = parent 
-    end
+#Lowest level structure for Knight
+class Node
+  attr_accessor :value, :parent
+
+  def initialize(value, parent: nil)
+    @value = value
+    @parent = parent
+  end
 end
